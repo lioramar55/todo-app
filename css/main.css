@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+/* global */
+* {
+  box-sizing: border-box;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/*Main Container*/
+
+h1 {
+  margin: 0.5rem 0;
+  color: cornsilk;
+
+  font-size: 1.6rem;
+}
+
+.container {
+  margin-top: 2rem;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 5rem;
+  box-shadow: 5px 5px 15px 3px #000000;
+}
+
+/* filter section */
+
+.todo-filter {
+  margin: 0.4rem 0;
+}
+
+.todo-filter button {
+  border: none;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  border-radius: 4rem;
+  color: white;
+  background-color: gray;
+  cursor: pointer;
+}
+
+/* Todo list <ul> */
+
+.todo-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  color: whitesmoke;
+}
+
+.todo-list li {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: fit-content;
+}
+
+/* todo form */
+
+.todo-form {
+  margin: 1rem 0;
+}
+
+/* todo stat */
+.todo-stat {
+  padding: 5px;
+  margin: 5px;
+}
+
+.todo-stat span {
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+h5 {
+  margin: 0;
+}
+
+/* utility classes */
+
+.flex-wrapper {
+  display: flex;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.inline-btn {
+  margin-left: 0.2rem;
+}
