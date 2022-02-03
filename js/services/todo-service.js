@@ -5,7 +5,9 @@ var gTodos;
 var gFilterBy = 'ALL';
 var gSortBy;
 
-_createTodos();
+function createTodos() {
+  _createTodos();
+}
 
 function getTodosForDisplay() {
   _sortTodos(gSortBy);
@@ -56,7 +58,6 @@ function setSort(sortBy) {
 
 function editTodoLocation(direction, idx) {
   var temp = null;
-  console.log('direction', direction);
   if (direction === 'up') {
     temp = gTodos[idx];
     gTodos[idx] = gTodos[idx - 1];
@@ -109,8 +110,9 @@ function _sortTodos(sortBy) {
   if (gSortBy === 'None') return;
   switch (sortBy) {
     case 'CREATED':
-      gTodos = gTodos.sort((a, b) =>
-        b.createdAt > a.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0
+      gTodos = gTodos.sort(
+        (a, b) => b.createdAt - a.createdAt
+        // b.createdAt > a.createdAt ? 1 : a.createdAt > b.createdAt ? -1 : 0
       );
       break;
     case 'TXT':
@@ -121,8 +123,9 @@ function _sortTodos(sortBy) {
       });
       break;
     case 'IMPORTANCE':
-      gTodos.sort((a, b) =>
-        b.importance > a.importance ? 1 : a.importance > b.importance ? -1 : 0
+      gTodos.sort(
+        (a, b) => b.importance - a.importance
+        // b.importance > a.importance ? 1 : a.importance > b.importance ? -1 : 0
       );
       break;
   }

@@ -2,6 +2,7 @@
 
 // called on body load
 function onInit() {
+  createTodos();
   renderTodos();
 }
 
@@ -59,10 +60,10 @@ function onToggleTodo(ev, todoId) {
 
 function onAddTodo() {
   const elTxt = document.querySelector('input[name=todoTxt]');
-  const importance = document.querySelector('.importance-level').value.trim();
-  const txt = elTxt.value;
+  const importance = document.querySelector('.importance-level').value;
+  const txt = elTxt.value.trim();
 
-  if (txt.length) {
+  if (txt || txt.length) {
     addTodo(txt, importance);
   }
 
