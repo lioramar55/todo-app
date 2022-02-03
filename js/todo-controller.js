@@ -19,7 +19,7 @@ function renderTodos() {
   if (todos.length) {
     strHTMLs = todos.map((todo, idx) => {
       return `<li class="${todo.isDone ? 'done' : ''}" onclick="onToggleTodo(event, '${todo.id}')">
-              ${todo.txt + createEditButtons(idx)}
+              ${todo.txt} | ${getPrintedTime(todo.createdAt)} | ${createEditButtons(idx)} 
               <button class= "inline-btn" onclick="onRemoveTodo(event, '${todo.id}')">X</button>
               (${todo.importance})
             </li>`;
@@ -59,8 +59,9 @@ function onToggleTodo(ev, todoId) {
 
 function onAddTodo() {
   const elTxt = document.querySelector('input[name=todoTxt]');
-  const importance = document.querySelector('.importance-level').value;
+  const importance = document.querySelector('.importance-level').value.trim();
   const txt = elTxt.value;
+
   if (txt.length) {
     addTodo(txt, importance);
   }

@@ -114,7 +114,11 @@ function _sortTodos(sortBy) {
       );
       break;
     case 'TXT':
-      gTodos.sort((a, b) => (a.txt > b.txt ? 1 : b.txt > a.txt ? -1 : 0));
+      gTodos.sort((a, b) => {
+        var x = a.txt;
+        var y = b.txt;
+        return x.toUpperCase() > y.toUpperCase() ? 1 : y.toUpperCase() > x.toUpperCase() ? -1 : 0;
+      });
       break;
     case 'IMPORTANCE':
       gTodos.sort((a, b) =>
